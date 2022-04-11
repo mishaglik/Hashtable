@@ -57,3 +57,7 @@ lib/
 lib
 log/
 main
+
+out.txt
+*.csv
+ht.so

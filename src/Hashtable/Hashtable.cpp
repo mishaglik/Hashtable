@@ -284,6 +284,7 @@ size_t EsHash(const hkey_t* key){
     size_t s = 0;
     asm(
         ".intel_syntax noprefix\n\t"
+
         "mov rsi, %1\n\t"
         "xor rdi, rdi\n\t"
         "xor rax, rax\n\t"
@@ -293,7 +294,10 @@ size_t EsHash(const hkey_t* key){
         "add rdi, rax\n\t"
         "loop abobalopper%=\n\t"
         "mov %0, rdi\n\t"
-        ".att_syntax\n\t" : "=r"(s) : "r"(key) : "rsi", "rdi", "rcx", "rax"
+
+        ".att_syntax\n"
+
+        : "=r"(s) : "r"(key) : "rsi", "rdi", "rcx", "rax"
     );
     return s;
 }

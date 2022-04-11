@@ -29,11 +29,11 @@ typedef size_t data_t;
 typedef size_t HashtableListNodeIt;
 
 // #define HASH(x) defaultHash(x)
-// #define HASH(x) stringHash(x)
+#define HASH(x) stringHash(x)
 
 // #define HASH(x) OneHash(x)
 // #define HASH(x) s0Hash(x)
-#define HASH(x) EsHash(x)
+// #define HASH(x) EsHash(x)
 // #define HASH(x) strnlen((const char*)x, 32)
 // #define HASH(x) rotHash(x)
 // #define EQ(x, y) !memcmp((x), (y), sizeof(hkey_t))
